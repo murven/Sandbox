@@ -1,16 +1,31 @@
 <template>
-  <div class="main">
-    
-    <project />
+  <div id="app">
+    <div id="nav">
+      TEST
+    </div>
+    <router-view/>
   </div>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import HelloWorldApi from '/Users/roma0/OneDrive/Desktop/Sandbox/andres/api/src';
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
 
-@Component({
-  name: ''
-})
-export default class App extends Vue {}
-</script>
+#nav {
+  padding: 30px;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
+}
+</style>

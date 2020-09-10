@@ -1,9 +1,10 @@
-import Vue from 'vue'
-import App from './App.vue'
-import api from '/Users/roma0/OneDrive/Desktop/Sandbox/andres/api/src'
+import Vue from 'vue';
+import App from './App.vue';
+import router from './router';
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+  router,
+  render: (h) => h(App),
+}).$mount('#app');
