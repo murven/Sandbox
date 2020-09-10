@@ -1,14 +1,32 @@
 <template>
-  <div class="main">
-    <project />
+  <div class="hello">
   </div>
 </template>
-<script>
-import Project from '@/components/Project.vue'
-export default {
-  name: 'HelloWorld',
-  components: {
-    Project
-  }
+
+<script lang="ts">
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import HelloWorldApi from '/Users/roma0/OneDrive/Desktop/Sandbox/andres/api/src';
+
+@Component
+export default class HelloWorld extends Vue {
+  @Prop() private msg!: string;
 }
 </script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+h3 {
+  margin: 40px 0 0;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+a {
+  color: #42b983;
+}
+</style>
