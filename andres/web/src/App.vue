@@ -6,7 +6,6 @@
 
 <script>
 import holamundo from './components/holamundo'
-
 export default {
   name: 'App',
   components: {
