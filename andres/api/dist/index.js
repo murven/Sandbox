@@ -7,7 +7,8 @@ const express_1 = __importDefault(require("express"));
 const app = express_1.default();
 const port = 37851;
 app.get("/", (req, res) => {
-    res.send("Hello world!");
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
+    res.send("Hello world!!");
 });
 app.listen(port, () => {
     // console.log( `server started at http://localhost:${ port }` );

@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-      http://localhost:37851/:
    <holamundo/>
   </div>
 </template>
