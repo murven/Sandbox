@@ -5,7 +5,7 @@ var cors = require("cors");
 var app = express().use(cors());
 var port = 37851;
 app.get('/', function (req, res) {
-    res.send('Hello, World 2!');
+    res.send('Hello, World!');
 });
 app.listen(port, function () {
     console.log("Server is running at https://localhost:" + port);
