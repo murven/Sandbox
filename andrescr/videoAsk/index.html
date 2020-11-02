@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Prueba VideoAsk</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://www.videoask.com/embed/embed.js"></script>
+
+
+</head>
+
+<body>
+    <script src="app.js"></script>
+
+    <p>Usamos un link para mostrar un video embedded y un widget en la esquina inferior derecha. </p>
+
+        <p>
+            El video aparece en otra ventana pero cuando se tenga certificado SSL aparecera en esta misma ventana.
+        </p>
+
+    <!-- Primer video -->
+    <a href="javascript:void(videoask.loadModal('https://www.videoask.com/fn5pz0q1v'))">
+        Mostrar el primer video
+    </a>
+
+    <script>
+
+        
+        window.VIDEOASK_EMBED_CONFIG = {
+          "kind": "widget",
+          "url": "https://www.videoask.com/f2q3eyvcu",
+          "options": {
+            "widgetType": "VideoThumbnailWindow",
+            "text": "Hablemos!",
+            "backgroundColor": "#002DFE",
+            "position": "bottom-right",
+            "dismissable": true,
+          }
+        }
+        </script>
+        <script src="https://www.videoask.com/embed/embed.js"></script>
+
+
+
+</body>
+
+</html>
