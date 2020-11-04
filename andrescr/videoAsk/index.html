@@ -7,18 +7,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <script src="https://www.videoask.com/embed/embed.js"></script>
-
-
 </head>
 
 <body>
-    <script src="app.js"></script>
+    <h1>Prueba de concepto, VideoAsk.</h1>
 
+    <h2>Paso 1, grabar video.</h2>
+    <button id="startRecordingBtn">Start Recording</button>
+    <video id="video1" width="320" height="240" autoplay muted></video>
+
+    <h2>Paso 2, mostrar grabacion</h2>
+    <video id="video2" width="320" height="240" controls></video>
+    <a id="downloadBtn">Download</a>
+
+    <h2>Paso 3, generar link y hacer POST a VA.</h2>
+    <button id="createFormBtn">Create new form!</button>
+    <button id="uploadVideoBtn">Upload file to videoAsk!</button>
+
+    <h2>Paso 4, GET videos from VA y mostrar abajo</h2>
+    <button id="getVideosBtn">Get data!</button>
+
+    <h3>Videos subidos: </h3>
     <p>Usamos un link para mostrar un video embedded y un widget en la esquina inferior derecha. </p>
 
-        <p>
-            El video aparece en otra ventana pero cuando se tenga certificado SSL aparecera en esta misma ventana.
-        </p>
+    <p>
+        El video aparece en otra ventana pero cuando se tenga certificado SSL aparecera en esta misma ventana.
+    </p>
 
     <!-- Primer video -->
     <a href="javascript:void(videoask.loadModal('https://www.videoask.com/fn5pz0q1v'))">
@@ -26,23 +40,21 @@
     </a>
 
     <script>
-
-        
         window.VIDEOASK_EMBED_CONFIG = {
-          "kind": "widget",
-          "url": "https://www.videoask.com/f2q3eyvcu",
-          "options": {
-            "widgetType": "VideoThumbnailWindow",
-            "text": "Hablemos!",
-            "backgroundColor": "#002DFE",
-            "position": "bottom-right",
-            "dismissable": true,
-          }
+            "kind": "widget",
+            "url": "https://www.videoask.com/f2q3eyvcu",
+            "options": {
+                "widgetType": "VideoThumbnailWindow",
+                "text": "Hablemos!",
+                "backgroundColor": "#002DFE",
+                "position": "bottom-right",
+                "dismissable": true,
+            }
         }
-        </script>
-        <script src="https://www.videoask.com/embed/embed.js"></script>
+    </script>
+    <script src="https://www.videoask.com/embed/embed.js"></script>
 
-
+    <script src="app.js"></script>
 
 </body>
 
