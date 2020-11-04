@@ -8,5 +8,5 @@ app.get('/', function (req, res) {
     res.send('Hello, World!');
 });
 app.listen(port, function () {
-    console.log("Server is running at https://localhost:" + port);
+    console.log("Server is running at http://localhost:" + port);
 });
