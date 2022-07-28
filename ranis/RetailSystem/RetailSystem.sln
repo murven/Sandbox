@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientUI", "ClientUI\ClientUI.csproj", "{ED03C33D-9123-4785-8AC2-CC8B615064C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sales", "Sales\Sales.csproj", "{F5E3E6B1-8984-483E-BAE5-D34CA699C42F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messages", "Messages\Messages.csproj", "{B537B753-5B97-4941-9C4B-4B057D66EB32}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED03C33D-9123-4785-8AC2-CC8B615064C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED03C33D-9123-4785-8AC2-CC8B615064C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED03C33D-9123-4785-8AC2-CC8B615064C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED03C33D-9123-4785-8AC2-CC8B615064C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5E3E6B1-8984-483E-BAE5-D34CA699C42F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5E3E6B1-8984-483E-BAE5-D34CA699C42F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5E3E6B1-8984-483E-BAE5-D34CA699C42F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5E3E6B1-8984-483E-BAE5-D34CA699C42F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B537B753-5B97-4941-9C4B-4B057D66EB32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B537B753-5B97-4941-9C4B-4B057D66EB32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B537B753-5B97-4941-9C4B-4B057D66EB32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B537B753-5B97-4941-9C4B-4B057D66EB32}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
