@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Send", "Send\Send.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Receive", "Receive\Receive.csproj", "{94339FF1-F34E-4895-AF11-83056428EE7F}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewTask", "NewTask\NewTask.csproj", "{514CD443-7536-48D6-81F6-E5979674CE17}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Worker", "Worker\Worker.csproj", "{7346B74E-49F1-44C0-99E3-302CBF91FD46}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{94339FF1-F34E-4895-AF11-83056428EE7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94339FF1-F34E-4895-AF11-83056428EE7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94339FF1-F34E-4895-AF11-83056428EE7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{514CD443-7536-48D6-81F6-E5979674CE17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{514CD443-7536-48D6-81F6-E5979674CE17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{514CD443-7536-48D6-81F6-E5979674CE17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{514CD443-7536-48D6-81F6-E5979674CE17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7346B74E-49F1-44C0-99E3-302CBF91FD46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7346B74E-49F1-44C0-99E3-302CBF91FD46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7346B74E-49F1-44C0-99E3-302CBF91FD46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7346B74E-49F1-44C0-99E3-302CBF91FD46}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
