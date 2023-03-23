@@ -1,0 +1,1 @@
+return (Get-Content .\gw2-api-config.json) | Out-String | ConvertFrom-Json
