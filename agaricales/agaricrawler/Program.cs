@@ -8,7 +8,7 @@ IConfiguration config = new ConfigurationBuilder()
 GameAccountsConfiguration? gameAccountsConfiguration =
     config.GetRequiredSection(GameAccountsConfiguration.SectionName)
           .Get<GameAccountsConfiguration>();
-if (gameAccountsConfiguration?.Accounts is null 
+if (gameAccountsConfiguration?.Accounts is null
     || !gameAccountsConfiguration.Accounts.Any())
 {
     Console.WriteLine("No game accounts were found in the configuration.");
@@ -16,6 +16,7 @@ if (gameAccountsConfiguration?.Accounts is null
     Console.WriteLine("This file should contain a section called GameAccountsConfiguration,");
     Console.WriteLine("which in turn should include a JSON array called Accounts.");
     Console.WriteLine("Each account should have a Name, an ApiKey and an OutputFolder to save the files to.");
+    return 1;
 }
 else
 {
@@ -26,3 +27,15 @@ else
         Console.WriteLine($"{counter:000}-) {account.Name}");
     }
 }
+GuildWars2ApiConfiguration? guildWars2ApiConfiguration =
+    config.GetRequiredSection(GuildWars2ApiConfiguration.SectionName)
+          .Get<GuildWars2ApiConfiguration>();
+if (!(guildWars2ApiConfiguration?.IsValid() ?? false))
+{
+    Console.WriteLine("No Guild Wars 2 API found in the configuration.");
+    Console.WriteLine("Make sure there is an appsettings.json file in the same folder as agaricrawler.");
+    Console.WriteLine("This file should contain a section called GuildWars2ApiConfiguration,");
+    Console.WriteLine("the section should have a Host, Schema and Version.");
+    return 2;
+}
+return 0;
