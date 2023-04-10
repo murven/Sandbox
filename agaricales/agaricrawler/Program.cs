@@ -20,11 +20,13 @@ if (gameAccountsConfiguration?.Accounts is null
 }
 else
 {
-    Console.WriteLine("The following accounts have been found in the configuration:");
-    var counter = 1;
-    foreach (var account in gameAccountsConfiguration.Accounts)
+    Console.WriteLine("The following accounts were found in the configuration:");
+    var enumeratedAccounts = gameAccountsConfiguration
+        .Accounts
+        .Select((account, index) => $"{index + 1:000}-) {account.Name}");
+    foreach (var account in enumeratedAccounts)
     {
-        Console.WriteLine($"{counter:000}-) {account.Name}");
+        Console.WriteLine(account);
     }
 }
 GuildWars2ApiConfiguration? guildWars2ApiConfiguration =
@@ -35,7 +37,17 @@ if (!(guildWars2ApiConfiguration?.IsValid() ?? false))
     Console.WriteLine("No Guild Wars 2 API found in the configuration.");
     Console.WriteLine("Make sure there is an appsettings.json file in the same folder as agaricrawler.");
     Console.WriteLine("This file should contain a section called GuildWars2ApiConfiguration,");
-    Console.WriteLine("the section should have a Host, Schema and Version.");
+    Console.WriteLine("the section should have a Host, Schema, Version, and a JSON Array with all the AccountEndpoints.");
     return 2;
+}
+Console.WriteLine("The Guild Wars 2 API Base Uri is:");
+Console.WriteLine(guildWars2ApiConfiguration.GuildWars2ApiBaseUri);
+Console.WriteLine("The following endpoints were found in the configuration:");
+var enumeratedEndpoints = guildWars2ApiConfiguration
+    .GetAccountEndpointsArray()
+    .Select((accountEndpoint, index) => $"{index + 1:000}-) {accountEndpoint}");
+foreach (var endpoint in enumeratedEndpoints)
+{
+    Console.WriteLine(endpoint);
 }
 return 0;
