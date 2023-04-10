@@ -2,6 +2,10 @@
 using Microsoft.Extensions.Configuration;
 using agaricrawler;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.IO;
+
 IConfiguration config = new ConfigurationBuilder()
     .AddJsonFile("appsettings.json")
     .Build();
@@ -49,5 +53,55 @@ var enumeratedEndpoints = guildWars2ApiConfiguration
 foreach (var endpoint in enumeratedEndpoints)
 {
     Console.WriteLine(endpoint);
+}
+var fileDateTimeFolder = DateTime.Now.ToUniversalTime().ToString("yyyyMMddTHHmmssffffZ");
+Console.WriteLine("The snapshot will be saved to the following folder in the configured output folder for each account:");
+Console.WriteLine(fileDateTimeFolder);
+GameAccountSettings[] sanitizedAccounts =
+    gameAccountsConfiguration?.Accounts
+    ?? Array.Empty<GameAccountSettings>();
+HttpClient guildWars2ApiClient = new()
+{
+    BaseAddress = new Uri(guildWars2ApiConfiguration.GuildWars2ApiBaseUri),
+};
+foreach (GameAccountSettings account in sanitizedAccounts)
+{
+    var accountOutputFolder = account.GetOutputFolderName(fileDateTimeFolder);
+    Directory.CreateDirectory(accountOutputFolder);
+    Console.WriteLine("=================================================");
+    Console.WriteLine("Downloading data for the following account:");
+    Console.WriteLine(account.Name);
+    Console.WriteLine("=================================================");
+    Console.WriteLine("Downloading data to the following folder:");
+    Console.WriteLine(accountOutputFolder);
+    guildWars2ApiClient.DefaultRequestHeaders.Authorization =
+        new AuthenticationHeaderValue("Bearer", account.ApiKey);
+    foreach (string endpoint in guildWars2ApiConfiguration.AccountEndpoints ?? Array.Empty<string>())
+    {
+        Console.WriteLine("Downloading data from the following endpoint:");
+        Console.WriteLine(endpoint);
+        using var responseMessage = await guildWars2ApiClient.GetAsync($"{guildWars2ApiConfiguration.Version}/{endpoint}");
+        if (responseMessage.IsSuccessStatusCode)
+        {
+            var outputFileName = endpoint.Replace("/", "-");
+            var outputFile = $"{accountOutputFolder}\\{outputFileName}.json";
+            Console.WriteLine("Saving data to the following file:");
+            Console.WriteLine(outputFile);
+            var responseString = await responseMessage.Content.ReadAsStringAsync();
+            await System.IO.File.WriteAllTextAsync(outputFile, responseString);
+            Console.WriteLine("Data saved successfully.");
+        }
+        else
+        {
+            Console.WriteLine("Error downloading data:");
+            Console.WriteLine(responseMessage.StatusCode);
+            var responseString = await responseMessage.Content.ReadAsStringAsync();
+            Console.WriteLine(responseString);
+        }
+    }
+    Console.WriteLine("=================================================");
+    Console.WriteLine("All data downloaded for the following account:");
+    Console.WriteLine(account.Name);
+    Console.WriteLine("=================================================");
 }
 return 0;
