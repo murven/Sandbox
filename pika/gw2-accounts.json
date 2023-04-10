@@ -3,5 +3,10 @@
         "name": "Main",
         "apiKey": "119CAD7B-AE05-894D-B4D0-79282C0D34406551F6A6-E9CF-4C54-80FD-D5ECD67346EE",
         "outputFolder": "S:\\OneDrive\\GuildWars2"
+    },
+    {
+        "name": "Europe",
+        "apiKey": "07F4573F-178D-E042-99DF-E9CDA9F18CFA5F042BE5-3B5F-4B73-8644-59688316E279",
+        "outputFolder": "S:\\OneDrive\\GuildWars2"
     }
 ]
